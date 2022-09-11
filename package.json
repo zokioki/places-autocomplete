@@ -4,8 +4,11 @@
   "description": "An autocomplete component for the Mapbox Geocoding API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\""
   },
-  "author": "",
-  "license": "MIT"
+  "author": "Zoran Pesic",
+  "license": "MIT",
+  "dependencies": {
+    "autocompleter": "^6.1.3"
+  }
 }
