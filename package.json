@@ -1,0 +1,11 @@
+{
+  "name": "places-autocomplete",
+  "version": "0.1.0",
+  "description": "An autocomplete component for the Mapbox Geocoding API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
