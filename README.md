@@ -1,6 +1,6 @@
 ## places-autocomplete
 
-![npm](https://img.shields.io/npm/v/places-autocomplete)
+[![npm](https://img.shields.io/npm/v/places-autocomplete)](https://www.npmjs.com/package/places-autocomplete)
 
 This library provides an autocomplete component for the [Mapbox Geocoding API](https://docs.mapbox.com/api/search/geocoding/).
 
