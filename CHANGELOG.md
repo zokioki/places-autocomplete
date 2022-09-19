@@ -1,4 +1,4 @@
-### 0.2.0
+### 0.3.0
 
 - Allow using autocomplete in standalone mode (without a map instance).
   - Note that although it is now possible to use the autocomplete
