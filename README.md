@@ -42,10 +42,11 @@ The autocomplete can be configured with the following options upon initializatio
 | `preventSubmit`            | If true, prevents the input from submitting its form on Enter.             | `false`          |
 | `limit`                    | Number of results to return in the autocomplete.                           | `6`              |
 | `language`                 | Language of returned Mapbox autocomplete results.                          | browser language |
+| `proximity`                | Favor results that are closer to this location. Given as a string of two comma-separated coordinates ("lon,lat"). If a `mapInstance` is specified then the map's current center position will be used instead. | - |
 | `additionalResultsPrepend` | If true, prepends `additionalResults` entries to autocomplete suggestions. | `false`          |
 | `onClear`                  | Function called when input is cleared.                                     | -                |
 | `onSelect`                 | Function called when autocomplete item is selected (args: [item]).         | -                |
-| `additionalResults`        | Function called before updating autocomplete results, should return array of results (args: [query]).  | - |
+| `additionalResults`        | Function called before updating autocomplete results, should return array of results (args: [query]). | - |
 | `customize`                | Function called before rendering autocomplete results (args: [input, inputRect, container, maxHeight]). | - |
 
 ### License
