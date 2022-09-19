@@ -35,7 +35,7 @@ The autocomplete can be configured with the following options upon initializatio
 | -------------------------- | -------------------------------------------------------------------------- | ---------------- |
 | `input`                    | An input DOM element to attach the autocomplete to.                        | -                |
 | `mapboxToken`              | The Mapbox access token used for the API requests (required).              | -                |
-| `mapInstance`              | A `mapboxgl.Map` instance, syncs map position to autocomplete (required).  | -                |
+| `mapInstance`              | A `mapboxgl.Map` instance, syncs map position to autocomplete.             | -                |
 | `className`                | Specifies the class name for the autocomplete suggestions container.       | -                |
 | `minLength`                | Minimum number of characters needed to trigger autocomplete.               | `2`              |
 | `debounce`                 | Time in milliseconds to delay the autocomplete between keystrokes.         | `200`            |

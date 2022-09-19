@@ -5,7 +5,7 @@ import autocomplete from 'autocompleter';
 // Options:
 // - input (required): An input element to attach the autocomplete to.
 // - mapboxToken (required): The Mapbox access token used for the API requests.
-// - mapInstance (required): A mapboxgl.Map instance, syncs map position to autocomplete selection.
+// - mapInstance: A mapboxgl.Map instance, syncs map position to autocomplete selection.
 // - className: Specifies the class name for the autocomplete suggestions container.
 // - minLength: Minimum amount of characters needed to trigger autocomplete (default: 2).
 // - debounce: Time in milliseconds to delay autocomplete call between keystrokes (default: 200).
@@ -54,9 +54,13 @@ export default class PlacesAutocomplete {
         const urlParams = new URLSearchParams({
           limit: options.limit || 6,
           language: options.language || navigator.language,
-          proximity: options.mapInstance.getCenter().toArray().join(','),
           access_token: options.mapboxToken,
         });
+
+        if (options.mapInstance) {
+          const mapCenter = options.mapInstance.getCenter();
+          urlParams.set('proximity', mapCenter.toArray().join(','));
+        }
 
         fetch(`${url}?${urlParams}`).then(response => response.json()).then(data => {
           const results = data.features.map(result => {
@@ -121,14 +125,16 @@ export default class PlacesAutocomplete {
         this.inputEl.value = item.value;
         let flightOptions = { ...options.mapFlight };
 
-        if (item.data.bbox) {
-          delete flightOptions.zoom;
-          this.mapInstance.fitBounds(item.data.bbox, flightOptions);
-        } else {
-          this.mapInstance.flyTo({
-            center: item.data.center || item.data.geometry.coordinates,
-            ...flightOptions,
-          });
+        if (this.mapInstance) {
+          if (item.data.bbox) {
+            delete flightOptions.zoom;
+            this.mapInstance.fitBounds(item.data.bbox, flightOptions);
+          } else {
+            this.mapInstance.flyTo({
+              center: item.data.center || item.data.geometry.coordinates,
+              ...flightOptions,
+            });
+          }
         }
 
         if (options.onSelect) {
