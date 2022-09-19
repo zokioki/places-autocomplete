@@ -12,6 +12,9 @@ import autocomplete from 'autocompleter';
 // - preventSubmit: If true, prevents the input from submitting its form on Enter (default: false).
 // - limit: Number of results to return in the autocomplete (default: 6).
 // - language: Language of returned Mapbox autocomplete results (default: browser language).
+// - proximity: Bias the response to favor results that are closer to this location.
+//              Provided as two comma-separated coordinates (lon,lat). If a mapInstance is specified
+//              then the map's current center position will be used instead of this setting.
 // - additionalResultsPrepend: If true, prepends additionalResults entries to beginning of suggestions (default: false).
 // - onClear: Function triggered when input is cleared.
 // - onSelect: Function triggered when autocomplete item has been selected (args: [item]).
@@ -54,6 +57,7 @@ export default class PlacesAutocomplete {
         const urlParams = new URLSearchParams({
           limit: options.limit || 6,
           language: options.language || navigator.language,
+          proximity: options.proximity,
           access_token: options.mapboxToken,
         });
 
