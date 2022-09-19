@@ -24,7 +24,8 @@ const autocomplete = new PlacesAutocomplete({
   debounce: 300
 });
 
-autocomplete.attachTo(document.querySelector('#my-input-element'));
+const inputEl = document.getElementById('my-input');
+autocomplete.attachTo(inputEl);
 ```
 
 ### Options
