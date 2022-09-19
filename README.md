@@ -47,3 +47,7 @@ The autocomplete can be configured with the following options upon initializatio
 | `onSelect`                 | Function called when autocomplete item is selected (args: [item]).         | -                |
 | `additionalResults`        | Function called before updating autocomplete results, should return array of results (args: [query]).  | - |
 | `customize`                | Function called before rendering autocomplete results (args: [input, inputRect, container, maxHeight]). | - |
+
+### License
+
+The library is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
