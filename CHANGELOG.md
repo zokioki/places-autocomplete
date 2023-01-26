@@ -1,3 +1,7 @@
+### 0.4.0
+
+- Add support for `featureTypes` option
+
 ### 0.3.1
 
 - Improve getting started docs
