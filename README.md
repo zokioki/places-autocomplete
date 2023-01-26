@@ -20,7 +20,11 @@ import PlacesAutocomplete from 'places-autocomplete';
 import 'places-autocomplete/index.css';
 
 mapboxgl.accessToken = 'pk.abcd1234...';
-const mapboxglMap = new mapboxgl.Map({ /* your map options */ });
+
+const mapboxglMap = new mapboxgl.Map({
+  container: document.getElementById('my-map-container'),
+  style: 'mapbox://styles/mapbox/streets-v12'
+});
 
 const autocomplete = new PlacesAutocomplete({
   mapboxToken: mapboxgl.accessToken,
@@ -31,6 +35,8 @@ const autocomplete = new PlacesAutocomplete({
 const inputEl = document.getElementById('my-input');
 autocomplete.attachTo(inputEl);
 ```
+
+The example above configures the autocomplete with a [mapbox-gl](https://github.com/mapbox/mapbox-gl-js) map instance, allowing the autocomplete to sync the map's position to the selected autocomplete result. You can view the [Mapbox GL JS docs](https://docs.mapbox.com/mapbox-gl-js) for more information on the `mapbox-gl` package.
 
 ### Options
 
