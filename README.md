@@ -19,12 +19,9 @@ import mapboxgl from 'mapbox-gl';
 import PlacesAutocomplete from 'places-autocomplete';
 import 'places-autocomplete/index.css';
 
-/* 
-   Enter your access token that associates your 
-   Mapbox GL JS map with a Mapbox account
-*/
+/* Enter your access token that associates your 
+   Mapbox GL JS map with a Mapbox account */
 mapboxgl.accessToken = 'pk.abcd1234...';
-
 
 const mapboxglMap = new mapboxgl.Map({ /* your map options */ 
     container: 'map',                               // container ID
@@ -34,7 +31,6 @@ const mapboxglMap = new mapboxgl.Map({ /* your map options */
 });
 
 // container - the HTML element in which the map needs to be placed
-
 
 const autocomplete = new PlacesAutocomplete({
   mapboxToken: mapboxgl.accessToken,
