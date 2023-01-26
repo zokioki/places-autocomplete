@@ -3,7 +3,7 @@ import autocomplete from 'autocompleter';
 // Turns a specified input element into a customizable, Mapbox-powered autocomplete component:
 //
 // Options:
-// - input (required): An input element to attach the autocomplete to.
+// - input: An input element to attach the autocomplete to.
 // - mapboxToken (required): The Mapbox access token used for the API requests.
 // - mapInstance: A mapboxgl.Map instance, syncs map position to autocomplete selection.
 // - className: Specifies the class name for the autocomplete suggestions container.
@@ -15,6 +15,9 @@ import autocomplete from 'autocompleter';
 // - proximity: Bias the response to favor results that are closer to this location.
 //              Provided as two comma-separated coordinates (lon,lat). If a mapInstance is specified
 //              then the map's current center position will be used instead of this setting.
+// - featureTypes: Filter results to include only a subset of the available feature types. Multiple types
+//                 can be comma-separated. Options are: country, region, postcode, district, place, locality,
+//                 neighborhood, address, and poi.
 // - additionalResultsPrepend: If true, prepends additionalResults entries to beginning of suggestions (default: false).
 // - onClear: Function triggered when input is cleared.
 // - onSelect: Function triggered when autocomplete item has been selected (args: [item]).
@@ -58,6 +61,7 @@ export default class PlacesAutocomplete {
           limit: options.limit || 6,
           language: options.language || navigator.language,
           proximity: options.proximity,
+          types: options.featureTypes,
           access_token: options.mapboxToken,
         });
 

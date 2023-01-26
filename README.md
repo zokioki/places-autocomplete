@@ -54,6 +54,7 @@ The autocomplete can be configured with the following options upon initializatio
 | `limit`                    | Number of results to return in the autocomplete.                           | `6`              |
 | `language`                 | Language of returned Mapbox autocomplete results.                          | browser language |
 | `proximity`                | Favor results that are closer to this location. Given as a string of two comma-separated coordinates ("lon,lat"). If a `mapInstance` is specified then the map's current center position will be used instead. | - |
+| `featureTypes`             | Filter results to include only a subset of the available feature types. Multiple types can be comma-separated. Options are: country, region, postcode, district, place, locality, neighborhood, address, and poi. | - |
 | `additionalResultsPrepend` | If true, prepends `additionalResults` entries to autocomplete suggestions. | `false`          |
 | `onClear`                  | Function called when input is cleared.                                     | -                |
 | `onSelect`                 | Function called when autocomplete item is selected (args: [item]).         | -                |
