@@ -15,8 +15,12 @@ npm install --save places-autocomplete
 Import and initialize the autocomplete:
 
 ```javascript
+import mapboxgl from 'mapbox-gl';
 import PlacesAutocomplete from 'places-autocomplete';
 import 'places-autocomplete/index.css';
+
+mapboxgl.accessToken = 'pk.abcd1234...';
+const mapboxglMap = new mapboxgl.Map({ /* your map options */ });
 
 const autocomplete = new PlacesAutocomplete({
   mapboxToken: mapboxgl.accessToken,
