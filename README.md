@@ -42,7 +42,7 @@ const inputEl = document.getElementById('my-input');
 autocomplete.attachTo(inputEl);
 ```
 
-You can find a variety of styling options for the style parameter in the mapboxgl initialisation [here](https://docs.mapbox.com/api/maps/styles/#mapbox-styles)
+You can find a variety of styling options for the style parameter in the mapboxgl initialisation [here](https://docs.mapbox.com/api/maps/styles/#mapbox-styles).
 
 ### Options
 
