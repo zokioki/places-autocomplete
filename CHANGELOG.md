@@ -1,3 +1,7 @@
+### 0.3.1
+
+- Improve getting started docs
+
 ### 0.3.0
 
 - Allow using autocomplete in standalone mode (without a map instance).
