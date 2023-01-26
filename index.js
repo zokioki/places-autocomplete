@@ -60,10 +60,11 @@ export default class PlacesAutocomplete {
         const urlParams = new URLSearchParams({
           limit: options.limit || 6,
           language: options.language || navigator.language,
-          proximity: options.proximity,
-          types: options.featureTypes,
           access_token: options.mapboxToken,
         });
+
+        if (options.proximity) urlParams.set('proximity', options.proximity);
+        if (options.featureTypes) urlParams.set('types', options.featureTypes);
 
         if (options.mapInstance) {
           const mapCenter = options.mapInstance.getCenter();
