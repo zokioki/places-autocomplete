@@ -19,8 +19,22 @@ import mapboxgl from 'mapbox-gl';
 import PlacesAutocomplete from 'places-autocomplete';
 import 'places-autocomplete/index.css';
 
+/* 
+   Enter your access token that associates your 
+   Mapbox GL JS map with a Mapbox account
+*/
 mapboxgl.accessToken = 'pk.abcd1234...';
-const mapboxglMap = new mapboxgl.Map({ /* your map options */ });
+
+
+const mapboxglMap = new mapboxgl.Map({ /* your map options */ 
+    container: 'map',                               // container ID
+    style: 'mapbox://styles/mapbox/streets-v12',    // style URL
+    center: [-74.5, 40],                            // starting position [longitude, latiude]
+    zoom: 9                                         // zoom level
+});
+
+// container - the HTML element in which the map needs to be placed
+
 
 const autocomplete = new PlacesAutocomplete({
   mapboxToken: mapboxgl.accessToken,
@@ -31,6 +45,8 @@ const autocomplete = new PlacesAutocomplete({
 const inputEl = document.getElementById('my-input');
 autocomplete.attachTo(inputEl);
 ```
+
+You can find a variety of styling options for the style parameter in the mapboxgl initialisation [here](https://docs.mapbox.com/api/maps/styles/#mapbox-styles)
 
 ### Options
 
