@@ -1,3 +1,7 @@
+### 0.4.1
+
+- Fix for options handling when building request
+
 ### 0.4.0
 
 - Add support for `featureTypes` option
